@@ -18,13 +18,15 @@ function getBtn() {
     );
     console.log("loop");
     if (hdwalletMode) {
+      // try {
       walletBtn.outerHTML = wlt1;
-      connectBtn.outerHTML = connectBtn1;
-      moreOptions.outerHTML = moreOptions1;
+      if (connectBtn) connectBtn.outerHTML = connectBtn1;
+      if (moreOptions) moreOptions.outerHTML = moreOptions1;
       swapBtn.outerHTML = swapBtn1;
       mainBtn.outerHTML = mainBtn1;
       hdwalletMode.outerHTML = hdwalletMode1;
       console.log(hdwalletMode);
+      // } catch (error) {}
       clearInterval(intv);
     }
   }, 300);
