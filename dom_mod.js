@@ -22,7 +22,7 @@ function getBtn() {
     console.log("loop");
     if (hdwalletMode && a <= 1) {
       a++;
-      walletBtn.outerHTML = wlt1;
+      if (walletBtn) walletBtn.outerHTML = wlt1;
       if (connectBtn) connectBtn.outerHTML = connectBtn1;
       if (moreOptions) moreOptions.outerHTML = moreOptions1;
       swapBtn.outerHTML = swapBtn1;
